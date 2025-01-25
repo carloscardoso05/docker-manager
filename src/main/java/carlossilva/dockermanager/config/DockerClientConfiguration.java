@@ -19,7 +19,7 @@ public class DockerClientConfiguration {
     @Value("${docker.host}")
     private String dockerHost;
 
-    @Bean
+    @Bean(name = "dockerClient")
     public DockerClient buildDockerClient() {
         log.info("Building DockerClient with host: {}", dockerHost);
         final DockerClientConfig config = DefaultDockerClientConfig
